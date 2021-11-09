@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Entities
+namespace NewProjectApproval.Entities
 {
     public class ProjectManager
     {

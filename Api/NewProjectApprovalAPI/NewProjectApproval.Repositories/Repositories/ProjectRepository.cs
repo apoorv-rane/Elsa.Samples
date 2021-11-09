@@ -1,21 +1,16 @@
-﻿using Entities;
-using IRepositories;
+﻿using NewProjectApproval.Entities;
+using NewProjectApproval.IRepositories.IRepositories;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Repositories
+namespace NewProjectApproval.Repositories.Repositories
 {
     public class ProjectRepository : BaseRepository<Project>, IProjectRepository
     {
         public ProjectRepository(ProjectDbContext dbContext) : base(dbContext)
         {
         }
-
-        //public Task<CreateProject> AddProject(CreateProject project)
-        //{
-        //    throw new NotImplementedException();
-        //}
     } 
 }

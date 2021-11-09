@@ -1,5 +1,5 @@
-﻿using Entities;
-using IRepositories;
+﻿using NewProjectApproval.Entities;
+using NewProjectApproval.IRepositories.IRepositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;

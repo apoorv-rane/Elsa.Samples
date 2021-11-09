@@ -1,10 +1,10 @@
-﻿using Entities;
+﻿using NewProjectApproval.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Repositories
+namespace NewProjectApproval.Repositories
 {
     public class ProjectDbContext : DbContext
     {

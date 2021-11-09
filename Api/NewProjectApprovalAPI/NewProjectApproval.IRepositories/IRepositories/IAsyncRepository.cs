@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IRepositories
+namespace NewProjectApproval.IRepositories.IRepositories
 {
     public interface IAsyncRepository<T> where T : class
     {

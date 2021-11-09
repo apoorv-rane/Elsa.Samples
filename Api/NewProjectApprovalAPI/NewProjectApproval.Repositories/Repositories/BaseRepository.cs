@@ -1,11 +1,11 @@
-﻿using IRepositories;
+﻿using NewProjectApproval.IRepositories.IRepositories;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Repositories
+namespace NewProjectApproval.Repositories.Repositories
 {
     public class BaseRepository<T> : IAsyncRepository<T> where T : class
     {
