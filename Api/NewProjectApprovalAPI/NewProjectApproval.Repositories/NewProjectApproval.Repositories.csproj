@@ -14,8 +14,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Entities\Entities.csproj" />
-    <ProjectReference Include="..\IRepositories\IRepositories.csproj" />
+    <ProjectReference Include="..\NewProjectApproval.Entities\NewProjectApproval.Entities.csproj" />
+    <ProjectReference Include="..\NewProjectApproval.IRepositories\NewProjectApproval.IRepositories.csproj" />
   </ItemGroup>
 
 </Project>
