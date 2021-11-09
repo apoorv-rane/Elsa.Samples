@@ -19,6 +19,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderFilling.Repository", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderFillingApi", "Api\OrderFilling\OrderFillingApi\OrderFillingApi.csproj", "{859C4709-2A4C-40A7-AB9C-54DC5CA92991}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "InvoiceCustomer", "InvoiceCustomer", "{FFF7FF25-1FCC-412F-95C4-FE3F6FCBEB09}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InvoiceCustomerApi", "..\..\InvoiceCustomerApi\InvoiceCustomerApi\InvoiceCustomerApi.csproj", "{DA1138A1-CBA1-4F57-A536-471F6F1AA412}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InvoiceCustomerApi.Entities", "..\..\InvoiceCustomerApi\InvoiceCustomerApi.Entities\InvoiceCustomerApi.Entities.csproj", "{0E3F997D-1BAD-4209-8ECC-D3547431C14C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InvoiceCustomerApi.IRepositories", "..\..\InvoiceCustomerApi\InvoiceCustomerApi.IRepositories\InvoiceCustomerApi.IRepositories.csproj", "{69850FFB-EBE0-4357-994A-5EE04A5759E7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InvoiceCustomerApi.Repositories", "..\..\InvoiceCustomerApi\InvoiceCustomerApi.Repositories\InvoiceCustomerApi.Repositories.csproj", "{BB68FABB-0E09-4A25-BC49-5E5AB4B547AF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +55,22 @@ Global
 		{859C4709-2A4C-40A7-AB9C-54DC5CA92991}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{859C4709-2A4C-40A7-AB9C-54DC5CA92991}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{859C4709-2A4C-40A7-AB9C-54DC5CA92991}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA1138A1-CBA1-4F57-A536-471F6F1AA412}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA1138A1-CBA1-4F57-A536-471F6F1AA412}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA1138A1-CBA1-4F57-A536-471F6F1AA412}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA1138A1-CBA1-4F57-A536-471F6F1AA412}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E3F997D-1BAD-4209-8ECC-D3547431C14C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E3F997D-1BAD-4209-8ECC-D3547431C14C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E3F997D-1BAD-4209-8ECC-D3547431C14C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E3F997D-1BAD-4209-8ECC-D3547431C14C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69850FFB-EBE0-4357-994A-5EE04A5759E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69850FFB-EBE0-4357-994A-5EE04A5759E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69850FFB-EBE0-4357-994A-5EE04A5759E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69850FFB-EBE0-4357-994A-5EE04A5759E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB68FABB-0E09-4A25-BC49-5E5AB4B547AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB68FABB-0E09-4A25-BC49-5E5AB4B547AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB68FABB-0E09-4A25-BC49-5E5AB4B547AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB68FABB-0E09-4A25-BC49-5E5AB4B547AF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -56,6 +82,11 @@ Global
 		{071BE2EE-469C-4405-AE5F-9ED3DAC37734} = {94B6C6D0-4D8A-41A5-A3CD-A97A3FD355AD}
 		{B12D15CA-F65B-477A-894D-167CA24F57E0} = {94B6C6D0-4D8A-41A5-A3CD-A97A3FD355AD}
 		{859C4709-2A4C-40A7-AB9C-54DC5CA92991} = {94B6C6D0-4D8A-41A5-A3CD-A97A3FD355AD}
+		{FFF7FF25-1FCC-412F-95C4-FE3F6FCBEB09} = {FB8E28CF-6322-4E66-8738-7B5F89699E93}
+		{DA1138A1-CBA1-4F57-A536-471F6F1AA412} = {FFF7FF25-1FCC-412F-95C4-FE3F6FCBEB09}
+		{0E3F997D-1BAD-4209-8ECC-D3547431C14C} = {FFF7FF25-1FCC-412F-95C4-FE3F6FCBEB09}
+		{69850FFB-EBE0-4357-994A-5EE04A5759E7} = {FFF7FF25-1FCC-412F-95C4-FE3F6FCBEB09}
+		{BB68FABB-0E09-4A25-BC49-5E5AB4B547AF} = {FFF7FF25-1FCC-412F-95C4-FE3F6FCBEB09}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6586EFB3-2334-41B5-95C6-C229AC598442}
