@@ -28,6 +28,7 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NewProjectApprovalAPI", "Api\NewProjectApprovalAPI\NewProjectApprovalAPI\NewProjectApprovalAPI.csproj", "{89B9A56C-EDF9-4F22-A9D6-407802A58A19}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NewProjectApproval.Repositories", "Api\NewProjectApprovalAPI\NewProjectApproval.Repositories\NewProjectApproval.Repositories.csproj", "{2844A0EA-6D77-4CA9-8DE7-0DDFA7DF92D8}"
+EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "InvoiceCustomer", "InvoiceCustomer", "{FFF7FF25-1FCC-412F-95C4-FE3F6FCBEB09}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InvoiceCustomerApi", "Api\InvoiceCustomer\InvoiceCustomerApi\InvoiceCustomerApi.csproj", "{DA1138A1-CBA1-4F57-A536-471F6F1AA412}"
@@ -37,6 +38,16 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InvoiceCustomerApi.IRepositories", "Api\InvoiceCustomer\InvoiceCustomerApi.IRepositories\InvoiceCustomerApi.IRepositories.csproj", "{69850FFB-EBE0-4357-994A-5EE04A5759E7}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InvoiceCustomerApi.Repositories", "Api\InvoiceCustomer\InvoiceCustomerApi.Repositories\InvoiceCustomerApi.Repositories.csproj", "{BB68FABB-0E09-4A25-BC49-5E5AB4B547AF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TicketProccessing", "TicketProccessing", "{B1D9D6BC-96C7-4E6B-8692-A67788700CE7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicketProcessingRestApi", "Api\TicketProccessing\TicketProcessingRestApi\TicketProcessingRestApi.csproj", "{4836263F-956C-4EE1-BAD7-1037A8822E21}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicketProcessingRestApi.Entities", "Api\TicketProccessing\TicketProcessingRestApi.Entities\TicketProcessingRestApi.Entities.csproj", "{CCF21C7B-C0A9-428E-A042-503E70F2B40E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicketProcessingRestApi.IRepository", "Api\TicketProccessing\TicketProcessingRestApi.IRepository\TicketProcessingRestApi.IRepository.csproj", "{8C292FE7-4740-42B1-9231-5C9DF9074D2A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicketProcessingRestApi.Repository", "Api\TicketProccessing\TicketProcessingRestApi.Repository\TicketProcessingRestApi.Repository.csproj", "{DB86F762-B93D-40A4-9FB9-ACAC767F3609}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -96,6 +107,22 @@ Global
 		{BB68FABB-0E09-4A25-BC49-5E5AB4B547AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB68FABB-0E09-4A25-BC49-5E5AB4B547AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB68FABB-0E09-4A25-BC49-5E5AB4B547AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4836263F-956C-4EE1-BAD7-1037A8822E21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4836263F-956C-4EE1-BAD7-1037A8822E21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4836263F-956C-4EE1-BAD7-1037A8822E21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4836263F-956C-4EE1-BAD7-1037A8822E21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCF21C7B-C0A9-428E-A042-503E70F2B40E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCF21C7B-C0A9-428E-A042-503E70F2B40E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCF21C7B-C0A9-428E-A042-503E70F2B40E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCF21C7B-C0A9-428E-A042-503E70F2B40E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C292FE7-4740-42B1-9231-5C9DF9074D2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C292FE7-4740-42B1-9231-5C9DF9074D2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C292FE7-4740-42B1-9231-5C9DF9074D2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C292FE7-4740-42B1-9231-5C9DF9074D2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB86F762-B93D-40A4-9FB9-ACAC767F3609}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB86F762-B93D-40A4-9FB9-ACAC767F3609}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB86F762-B93D-40A4-9FB9-ACAC767F3609}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB86F762-B93D-40A4-9FB9-ACAC767F3609}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -117,6 +144,11 @@ Global
 		{0E3F997D-1BAD-4209-8ECC-D3547431C14C} = {FFF7FF25-1FCC-412F-95C4-FE3F6FCBEB09}
 		{69850FFB-EBE0-4357-994A-5EE04A5759E7} = {FFF7FF25-1FCC-412F-95C4-FE3F6FCBEB09}
 		{BB68FABB-0E09-4A25-BC49-5E5AB4B547AF} = {FFF7FF25-1FCC-412F-95C4-FE3F6FCBEB09}
+		{B1D9D6BC-96C7-4E6B-8692-A67788700CE7} = {FB8E28CF-6322-4E66-8738-7B5F89699E93}
+		{4836263F-956C-4EE1-BAD7-1037A8822E21} = {B1D9D6BC-96C7-4E6B-8692-A67788700CE7}
+		{CCF21C7B-C0A9-428E-A042-503E70F2B40E} = {B1D9D6BC-96C7-4E6B-8692-A67788700CE7}
+		{8C292FE7-4740-42B1-9231-5C9DF9074D2A} = {B1D9D6BC-96C7-4E6B-8692-A67788700CE7}
+		{DB86F762-B93D-40A4-9FB9-ACAC767F3609} = {B1D9D6BC-96C7-4E6B-8692-A67788700CE7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6586EFB3-2334-41B5-95C6-C229AC598442}
