@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Entities
+namespace NewProjectApproval.Entities
 {
     public class Project
     {
