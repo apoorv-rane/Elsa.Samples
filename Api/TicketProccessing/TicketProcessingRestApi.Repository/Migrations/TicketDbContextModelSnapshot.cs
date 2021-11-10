@@ -58,6 +58,22 @@ namespace TicketProcessingRestApi.Repository.Migrations
                     b.HasKey("TicketId");
 
                     b.ToTable("Tickets");
+
+                    b.HasData(
+                        new
+                        {
+                            TicketId = new Guid("b0788d2f-8003-43c1-92a4-edc76a7c5dde"),
+                            Attachment = "query.pdf",
+                            CreateDate = new DateTime(2021, 11, 10, 12, 51, 4, 626, DateTimeKind.Local).AddTicks(37),
+                            Discription = "new query",
+                            Priority = "High",
+                            TicketType = "IT",
+                            assignDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            assignManager = "neha.haridas@gmail.com",
+                            assignPerson = "vinay@xyz.com",
+                            createdBy = "Anshul@gmail.com",
+                            isResolved = false
+                        });
                 });
 #pragma warning restore 612, 618
         }
