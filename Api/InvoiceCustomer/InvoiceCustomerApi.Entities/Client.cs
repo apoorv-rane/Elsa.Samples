@@ -11,6 +11,8 @@ namespace InvoiceCustomerApi.Entities
         public Guid ClientId { get; set; }
         public string ClientName { get; set; }
         public string Email { get; set; }
-        public decimal Phone { get; set; }
+        public string Phone { get; set; }
+
+        public List<Invoice> Invoice { get; set; }
     }
 }

@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace InvoiceCustomerApi.Repositories.Migrations
 {
     [DbContext(typeof(DbContexts))]
-    [Migration("20211109092058_Initial")]
-    partial class Initial
+    [Migration("20211110070325_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -33,8 +33,8 @@ namespace InvoiceCustomerApi.Repositories.Migrations
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("Phone")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<string>("Phone")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ClientId");
 
@@ -46,14 +46,14 @@ namespace InvoiceCustomerApi.Repositories.Migrations
                             ClientId = new Guid("1213179a-7837-473a-a4d5-a5571b43e6a6"),
                             ClientName = "Ankit",
                             Email = "ankit@gmail.com",
-                            Phone = 9873892812m
+                            Phone = "9873892812"
                         },
                         new
                         {
                             ClientId = new Guid("2413179a-7837-493a-a4d5-a5571b43e6a6"),
                             ClientName = "Neha",
                             Email = "neha@gmail.com",
-                            Phone = 9173292812m
+                            Phone = "9173292812"
                         });
                 });
 
@@ -80,6 +80,8 @@ namespace InvoiceCustomerApi.Repositories.Migrations
 
                     b.HasKey("InvoiceId");
 
+                    b.HasIndex("ClientId");
+
                     b.ToTable("Invoices");
 
                     b.HasData(
@@ -88,7 +90,7 @@ namespace InvoiceCustomerApi.Repositories.Migrations
                             InvoiceId = new Guid("b0788d2f-8003-43c1-92a4-edc76a7c5dde"),
                             Amount = 2000m,
                             ClientId = new Guid("1213179a-7837-473a-a4d5-a5571b43e6a6"),
-                            Date = new DateTime(2021, 11, 9, 0, 0, 0, 0, DateTimeKind.Local),
+                            Date = new DateTime(2021, 11, 10, 0, 0, 0, 0, DateTimeKind.Local),
                             IsInvoicePaid = false,
                             NumberofResource = 10
                         },
@@ -97,10 +99,26 @@ namespace InvoiceCustomerApi.Repositories.Migrations
                             InvoiceId = new Guid("6313179f-7837-473a-a4d5-a5571b43e6a6"),
                             Amount = 3000m,
                             ClientId = new Guid("2413179a-7837-493a-a4d5-a5571b43e6a6"),
-                            Date = new DateTime(2021, 11, 9, 0, 0, 0, 0, DateTimeKind.Local),
+                            Date = new DateTime(2021, 11, 10, 0, 0, 0, 0, DateTimeKind.Local),
                             IsInvoicePaid = false,
                             NumberofResource = 9
                         });
+                });
+
+            modelBuilder.Entity("InvoiceCustomerApi.Entities.Invoice", b =>
+                {
+                    b.HasOne("InvoiceCustomerApi.Entities.Client", "Client")
+                        .WithMany("Invoice")
+                        .HasForeignKey("ClientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Client");
+                });
+
+            modelBuilder.Entity("InvoiceCustomerApi.Entities.Client", b =>
+                {
+                    b.Navigation("Invoice");
                 });
 #pragma warning restore 612, 618
         }
