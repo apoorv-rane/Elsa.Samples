@@ -46,14 +46,14 @@ namespace InvoiceCustomerApi.Repositories
                 ClientId = Client1Guid,
                 ClientName = "Ankit",
                 Email = "ankit@gmail.com",
-                Phone = 9873892812
+                Phone = "9873892812"
             },
             new Client
             {
                 ClientId = Client2Guid,
                 ClientName = "Neha",
                 Email = "neha@gmail.com",
-                Phone = 9173292812
+                Phone = "9173292812"
             });
         }
     }
