@@ -10,8 +10,22 @@ namespace HireEmployee.Repositories.Repositories
 {
     public class CandidateRepository : BaseRepository<Candidate>, ICandidateRepository
     {
+
         public CandidateRepository(HireEmployeeDbContext dbContext) : base(dbContext)
         {
+        }
+
+
+        async Task<Candidate> ICandidateRepository.AddCandidate(Candidate candidate)
+        {
+            await _dbContext.AddAsync(candidate);
+            await _dbContext.SaveChangesAsync();
+            return candidate;
+        }
+        async Task<IEnumerable<Candidate>> getAllCandidate(Guid id)
+        {
+            var candidateList = await _dbContext.Candidates.Where(x => x.JobId == id).ToListAsync();
+            return candidateList;
         }
     }
 }

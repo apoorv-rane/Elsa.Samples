@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HireEmployee.Repositories.Migrations
 {
     [DbContext(typeof(HireEmployeeDbContext))]
-    [Migration("20211109115008_datatype change experience in job")]
-    partial class datatypechangeexperienceinjob
+    [Migration("20211110065058_Data added")]
+    partial class Dataadded
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -52,6 +52,8 @@ namespace HireEmployee.Repositories.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("JobId");
 
                     b.ToTable("Candidates");
 
@@ -133,6 +135,22 @@ namespace HireEmployee.Repositories.Migrations
                             Salary = "25,000 - 28,0000",
                             Skills = "Dot Net, Django, NodeJS, SQL"
                         });
+                });
+
+            modelBuilder.Entity("HireEmployee.Entities.Candidate", b =>
+                {
+                    b.HasOne("HireEmployee.Entities.Job", "Job")
+                        .WithMany("Candidates")
+                        .HasForeignKey("JobId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Job");
+                });
+
+            modelBuilder.Entity("HireEmployee.Entities.Job", b =>
+                {
+                    b.Navigation("Candidates");
                 });
 #pragma warning restore 612, 618
         }

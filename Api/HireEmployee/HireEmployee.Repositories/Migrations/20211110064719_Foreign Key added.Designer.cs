@@ -4,14 +4,16 @@ using HireEmployee.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace HireEmployee.Repositories.Migrations
 {
     [DbContext(typeof(HireEmployeeDbContext))]
-    partial class HireEmployeeDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211110064719_Foreign Key added")]
+    partial class ForeignKeyadded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -54,44 +56,6 @@ namespace HireEmployee.Repositories.Migrations
                     b.HasIndex("JobId");
 
                     b.ToTable("Candidates");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("5b1c5587-eddd-4fc0-a6ca-3f83983b14e5"),
-                            Age = 21,
-                            Email = "shivam@gmail.com",
-                            ExpectedSalary = 380000,
-                            Experience = 3,
-                            JobId = new Guid("b0788d2f-8003-43c1-92a4-edc76a7c5dde"),
-                            Name = "Shivam Gupta",
-                            Resume = "ShivamResume.docx",
-                            Skill = "Dot Net, Python, Django, ReactJs"
-                        },
-                        new
-                        {
-                            Id = new Guid("5606e734-8d48-49af-a981-4ad9d862cc8d"),
-                            Age = 20,
-                            Email = "alista@gmail.com",
-                            ExpectedSalary = 300000,
-                            Experience = 1,
-                            JobId = new Guid("b0788d2f-8003-43c1-92a4-edc76a7c5dde"),
-                            Name = "Alista Menezes",
-                            Resume = "AlistaResume.docx",
-                            Skill = "Python, Angular, NodeJS "
-                        },
-                        new
-                        {
-                            Id = new Guid("fc5c071a-89a4-4622-a7ea-7afcb08ed22e"),
-                            Age = 35,
-                            Email = "rakesh@gmail.com",
-                            ExpectedSalary = 410000,
-                            Experience = 7,
-                            JobId = new Guid("6313179f-7837-473a-a4d5-a5571b43e6a6"),
-                            Name = "Rakesh Verma",
-                            Resume = "RakeshResume.docx",
-                            Skill = "Java, Dot Net, MongoDb"
-                        });
                 });
 
             modelBuilder.Entity("HireEmployee.Entities.Job", b =>
@@ -115,24 +79,6 @@ namespace HireEmployee.Repositories.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Jobs");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("b0788d2f-8003-43c1-92a4-edc76a7c5dde"),
-                            Designation = "Software Engineer",
-                            Experience = 3,
-                            Salary = "30,000 - 40,0000",
-                            Skills = "Dot Net, NodeJS, SQL"
-                        },
-                        new
-                        {
-                            Id = new Guid("6313179f-7837-473a-a4d5-a5571b43e6a6"),
-                            Designation = "Automation Tester",
-                            Experience = 1,
-                            Salary = "25,000 - 28,0000",
-                            Skills = "Dot Net, Django, NodeJS, SQL"
-                        });
                 });
 
             modelBuilder.Entity("HireEmployee.Entities.Candidate", b =>
