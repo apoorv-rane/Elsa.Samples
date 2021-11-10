@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace InvoiceCustomerApi.Entities
+namespace InvoiceCustomerApi.Model
 {
-    public class Invoice
+    public class InvoiceDto
     {
         public Guid InvoiceId { get; set; }
         public Guid ClientId { get; set; }
@@ -10,7 +13,5 @@ namespace InvoiceCustomerApi.Entities
         public int NumberofResource { get; set; }
         public DateTime Date { get; set; }
         public bool IsInvoicePaid { get; set; }
-
-        public Client Client { get; set; }
     }
 }
