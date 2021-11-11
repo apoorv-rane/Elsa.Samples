@@ -1,5 +1,6 @@
 ﻿using HireEmployee.Entities;
 using HireEmployee.IRepositories.IRepositories;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +27,11 @@ namespace HireEmployee.Repositories.Repositories
         {
             var candidateList = await _dbContext.Candidates.Where(x => x.JobId == id).ToListAsync();
             return candidateList;
+        }
+
+        Task<IEnumerable<Candidate>> ICandidateRepository.getAllCandidate(Guid id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -4,14 +4,16 @@ using HireEmployee.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace HireEmployee.Repositories.Migrations
 {
     [DbContext(typeof(HireEmployeeDbContext))]
-    partial class HireEmployeeDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211111122835_Added tables(including boolean fields) with intial data")]
+    partial class Addedtablesincludingbooleanfieldswithintialdata
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -27,9 +29,6 @@ namespace HireEmployee.Repositories.Migrations
 
                     b.Property<int>("Age")
                         .HasColumnType("int");
-
-                    b.Property<string>("Designation")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
@@ -75,7 +74,6 @@ namespace HireEmployee.Repositories.Migrations
                         {
                             Id = new Guid("5b1c5587-eddd-4fc0-a6ca-3f83983b14e5"),
                             Age = 21,
-                            Designation = "Software Engineer",
                             Email = "shivam@gmail.com",
                             ExpectedSalary = 380000,
                             Experience = 3,
@@ -92,7 +90,6 @@ namespace HireEmployee.Repositories.Migrations
                         {
                             Id = new Guid("5606e734-8d48-49af-a981-4ad9d862cc8d"),
                             Age = 20,
-                            Designation = "Software Engineer",
                             Email = "alista@gmail.com",
                             ExpectedSalary = 300000,
                             Experience = 1,
@@ -109,7 +106,6 @@ namespace HireEmployee.Repositories.Migrations
                         {
                             Id = new Guid("fc5c071a-89a4-4622-a7ea-7afcb08ed22e"),
                             Age = 35,
-                            Designation = "Software Engineer",
                             Email = "rakesh@gmail.com",
                             ExpectedSalary = 410000,
                             Experience = 7,
