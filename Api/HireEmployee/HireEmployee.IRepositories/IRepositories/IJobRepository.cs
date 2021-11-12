@@ -10,6 +10,6 @@ namespace HireEmployee.IRepositories
 {
     public interface IJobRepository: IAsyncRepository<Job>
     {
-
+        public Task<Job> AddJob(Job job);
     }
 }

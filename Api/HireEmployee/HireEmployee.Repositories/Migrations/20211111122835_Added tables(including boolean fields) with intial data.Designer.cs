@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HireEmployee.Repositories.Migrations
 {
     [DbContext(typeof(HireEmployeeDbContext))]
-    [Migration("20211109103745_Initial")]
-    partial class Initial
+    [Migration("20211111122835_Added tables(including boolean fields) with intial data")]
+    partial class Addedtablesincludingbooleanfieldswithintialdata
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -39,19 +39,33 @@ namespace HireEmployee.Repositories.Migrations
                     b.Property<int>("Experience")
                         .HasColumnType("int");
 
+                    b.Property<bool>("Interview")
+                        .HasColumnType("bit");
+
                     b.Property<Guid>("JobId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("OfferAccepted")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("PhoneScreening")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Resume")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("Review")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Skill")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("JobId");
 
                     b.ToTable("Candidates");
 
@@ -63,9 +77,13 @@ namespace HireEmployee.Repositories.Migrations
                             Email = "shivam@gmail.com",
                             ExpectedSalary = 380000,
                             Experience = 3,
+                            Interview = false,
                             JobId = new Guid("b0788d2f-8003-43c1-92a4-edc76a7c5dde"),
                             Name = "Shivam Gupta",
+                            OfferAccepted = false,
+                            PhoneScreening = false,
                             Resume = "ShivamResume.docx",
+                            Review = false,
                             Skill = "Dot Net, Python, Django, ReactJs"
                         },
                         new
@@ -75,9 +93,13 @@ namespace HireEmployee.Repositories.Migrations
                             Email = "alista@gmail.com",
                             ExpectedSalary = 300000,
                             Experience = 1,
+                            Interview = false,
                             JobId = new Guid("b0788d2f-8003-43c1-92a4-edc76a7c5dde"),
                             Name = "Alista Menezes",
+                            OfferAccepted = false,
+                            PhoneScreening = false,
                             Resume = "AlistaResume.docx",
+                            Review = false,
                             Skill = "Python, Angular, NodeJS "
                         },
                         new
@@ -87,9 +109,13 @@ namespace HireEmployee.Repositories.Migrations
                             Email = "rakesh@gmail.com",
                             ExpectedSalary = 410000,
                             Experience = 7,
+                            Interview = false,
                             JobId = new Guid("6313179f-7837-473a-a4d5-a5571b43e6a6"),
                             Name = "Rakesh Verma",
+                            OfferAccepted = false,
+                            PhoneScreening = false,
                             Resume = "RakeshResume.docx",
+                            Review = false,
                             Skill = "Java, Dot Net, MongoDb"
                         });
                 });
@@ -103,8 +129,8 @@ namespace HireEmployee.Repositories.Migrations
                     b.Property<string>("Designation")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Experience")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Experience")
+                        .HasColumnType("int");
 
                     b.Property<string>("Salary")
                         .HasColumnType("nvarchar(max)");
@@ -121,7 +147,7 @@ namespace HireEmployee.Repositories.Migrations
                         {
                             Id = new Guid("b0788d2f-8003-43c1-92a4-edc76a7c5dde"),
                             Designation = "Software Engineer",
-                            Experience = "3",
+                            Experience = 3,
                             Salary = "30,000 - 40,0000",
                             Skills = "Dot Net, NodeJS, SQL"
                         },
@@ -129,10 +155,26 @@ namespace HireEmployee.Repositories.Migrations
                         {
                             Id = new Guid("6313179f-7837-473a-a4d5-a5571b43e6a6"),
                             Designation = "Automation Tester",
-                            Experience = "1",
+                            Experience = 1,
                             Salary = "25,000 - 28,0000",
                             Skills = "Dot Net, Django, NodeJS, SQL"
                         });
+                });
+
+            modelBuilder.Entity("HireEmployee.Entities.Candidate", b =>
+                {
+                    b.HasOne("HireEmployee.Entities.Job", "Job")
+                        .WithMany("Candidates")
+                        .HasForeignKey("JobId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Job");
+                });
+
+            modelBuilder.Entity("HireEmployee.Entities.Job", b =>
+                {
+                    b.Navigation("Candidates");
                 });
 #pragma warning restore 612, 618
         }

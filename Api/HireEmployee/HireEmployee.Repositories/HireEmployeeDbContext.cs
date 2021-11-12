@@ -40,6 +40,7 @@ namespace HireEmployee.Repositories
             {
                 Id = Guid.Parse("{5b1c5587-eddd-4fc0-a6ca-3f83983b14e5}"),
                 JobId = Guid.Parse("{B0788D2F-8003-43C1-92A4-EDC76A7C5DDE}"),
+                Designation = "Software Engineer",
                 Name = "Shivam Gupta",
                 Age = 21,
                 Skill = "Dot Net, Python, Django, ReactJs",
@@ -47,12 +48,17 @@ namespace HireEmployee.Repositories
                 Email = "shivam@gmail.com",
                 ExpectedSalary = 380000,
                 Resume = "ShivamResume.docx",
+                Review = false,
+                PhoneScreening = false,
+                Interview = false,
+                OfferAccepted = false
             });
 
             modelBuilder.Entity<Candidate>().HasData(new Candidate
             {
                 Id = Guid.Parse("{5606e734-8d48-49af-a981-4ad9d862cc8d}"),
                 JobId = Guid.Parse("{B0788D2F-8003-43C1-92A4-EDC76A7C5DDE}"),
+                Designation = "Software Engineer",
                 Name = "Alista Menezes",
                 Age = 20,
                 Skill = "Python, Angular, NodeJS ",
@@ -60,12 +66,17 @@ namespace HireEmployee.Repositories
                 Email = "alista@gmail.com",
                 ExpectedSalary = 300000,
                 Resume = "AlistaResume.docx",
+                Review = false,
+                PhoneScreening = false,
+                Interview = false,
+                OfferAccepted = false
             });
 
             modelBuilder.Entity<Candidate>().HasData(new Candidate
             {
                 Id = Guid.Parse("{fc5c071a-89a4-4622-a7ea-7afcb08ed22e}"),
                 JobId = Guid.Parse("{6313179F-7837-473A-A4D5-A5571B43E6A6}"),
+                Designation = "Software Engineer",
                 Name = "Rakesh Verma",
                 Age = 35,
                 Skill = "Java, Dot Net, MongoDb",
@@ -73,6 +84,10 @@ namespace HireEmployee.Repositories
                 Email = "rakesh@gmail.com",
                 ExpectedSalary = 410000,
                 Resume = "RakeshResume.docx",
+                Review = false,
+                PhoneScreening = false,
+                Interview = false,
+                OfferAccepted = false
             });
         }
 
