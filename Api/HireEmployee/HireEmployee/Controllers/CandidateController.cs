@@ -36,7 +36,7 @@ namespace HireEmployee.Controllers
 
                 StringContent httpContent = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
 
-                HttpResponseMessage response1 = client.PostAsync("https://localhost:44391/initiateHiring", httpContent).Result;
+                HttpResponseMessage response1 = client.PostAsync("https://localhost:5001/initiateHiring", httpContent).Result;
             }
             return candidateResult;
         }
@@ -52,7 +52,7 @@ namespace HireEmployee.Controllers
                 string json = JsonSerializer.Serialize(candidate);
                 client.DefaultRequestHeaders.Add("X-Correlation-Id", candidate.Id.ToString());
                 StringContent httpContent = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
-                HttpResponseMessage response1 = client.PostAsync("https://localhost:44391/handleReview", httpContent).Result;
+                HttpResponseMessage response1 = client.PostAsync("https://localhost:5001/handleReview", httpContent).Result;
             }
             return status;
         }
@@ -68,7 +68,7 @@ namespace HireEmployee.Controllers
                 string json = JsonSerializer.Serialize(candidate);
                 client.DefaultRequestHeaders.Add("X-Correlation-Id", candidate.Id.ToString());
                 StringContent httpContent = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
-                HttpResponseMessage response1 = client.PostAsync("https://localhost:44391/handlePhoneScreening", httpContent).Result;
+                HttpResponseMessage response1 = client.PostAsync("https://localhost:5001/handlePhoneScreening", httpContent).Result;
             }
             return status;
         }
@@ -84,26 +84,36 @@ namespace HireEmployee.Controllers
                 string json = JsonSerializer.Serialize(candidate);
                 client.DefaultRequestHeaders.Add("X-Correlation-Id", candidate.Id.ToString());
                 StringContent httpContent = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
-                HttpResponseMessage response1 = client.PostAsync("https://localhost:44391/handleInterview", httpContent).Result;
+                HttpResponseMessage response1 = client.PostAsync("https://localhost:5001/handleInterview", httpContent).Result;
             }
             return status;
         }
 
-        [HttpPost("setOfferAcceptedStatus")]
+        [HttpGet("ScheduleInterview")]
+        public void ScheduleInterview(Guid id)
+        {
+            Interview detail = new Interview() {};
+            detail.Name = "Shreedhar";
+            detail.Email = "shreedhar@neosoft.com";
+            detail.DateNTime = DateTime.Now;
+            using (HttpClient client = new HttpClient())
+            {
+                string json = JsonSerializer.Serialize(detail);
+                client.DefaultRequestHeaders.Add("X-Correlation-Id", id.ToString());
+                StringContent httpContent = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
+                HttpResponseMessage response1 = client.PostAsync("https://localhost:5001/interviewSchedule", httpContent).Result;
+            }
+        }
+
+        [HttpPut("setOfferAcceptedStatus")]
         public async Task<bool> UpdateOfferAccepted(Guid id, bool status)
         {
             Candidate candidate = await _candidateRepository.GetByIdAsync(id);
             candidate.OfferAccepted = status;
             await _candidateRepository.UpdateAsync(candidate);
-            using (HttpClient client = new HttpClient())
-            {
-                string json = JsonSerializer.Serialize(candidate);
-                client.DefaultRequestHeaders.Add("X-Correlation-Id", candidate.Id.ToString());
-                StringContent httpContent = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
-                HttpResponseMessage response1 = client.PostAsync("https://localhost:44391/handleOfeerAccepted", httpContent).Result;
-            }
             return status;
         }
+
 
         [HttpPost("GetAllCandidateById")]
         public async Task<IEnumerable<Candidate>> allCandidate(Guid id)
@@ -117,5 +127,14 @@ namespace HireEmployee.Controllers
             Guid id = Guid.Parse(idString);
             //Place request to conduct phone screening
         }
+
+
+
+    }
+    public class Interview
+    {
+        public string Name { get; set; }
+        public string Email { get; set; }
+        public DateTime DateNTime { get; set; }
     }
 }
