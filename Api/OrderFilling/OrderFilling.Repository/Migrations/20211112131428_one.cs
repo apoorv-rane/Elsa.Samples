@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace OrderFilling.Repository.Migrations
 {
-    public partial class initial : Migration
+    public partial class one : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -12,9 +12,10 @@ namespace OrderFilling.Repository.Migrations
                 columns: table => new
                 {
                     OrderId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    ProductId = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    ProductId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     OrderDateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    DeliveryStatus = table.Column<bool>(type: "bit", nullable: false),
+                    DeliveryStatus = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DeliveryBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Quantity = table.Column<int>(type: "int", nullable: false)
                 },
@@ -30,7 +31,8 @@ namespace OrderFilling.Repository.Migrations
                     ProductId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     ProductName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ProductPrice = table.Column<int>(type: "int", nullable: false),
-                    Inventory = table.Column<int>(type: "int", nullable: false)
+                    Inventory = table.Column<int>(type: "int", nullable: false),
+                    materialInventory = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {

@@ -32,6 +32,8 @@ namespace OrderFillingApi
         {
 
             services.AddScoped(typeof(IAsyncRepository<>), typeof(BaseRepository<>));
+            services.AddScoped<IOrderRepository,OrderRepository>();
+            services.AddScoped<IUserRepository,UserRepository>();
             services.AddDbContext<DbContextAll>(opts => opts.UseSqlServer(Configuration.GetConnectionString("UserApiDB")));
             services.AddControllers();
             services.AddSwaggerGen(c =>

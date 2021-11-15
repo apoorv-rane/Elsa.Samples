@@ -14,5 +14,6 @@ namespace OrderFilling.Entities
         public string ProductName { get; set; }
         public int ProductPrice { get; set; }
         public int Inventory { get; set; }
+        public bool materialInventory { get; set; }
     }
 }

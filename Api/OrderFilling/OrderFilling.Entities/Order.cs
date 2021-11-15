@@ -11,9 +11,10 @@ namespace OrderFilling.Entities
     {
         [Key]
         public Guid OrderId { get; set; }
-        public string ProductId { get; set; } 
+        public Guid UserId { get; set; }
+        public Guid ProductId { get; set; } 
         public DateTime OrderDateTime { get; set; }
-        public bool DeliveryStatus { get; set; }
+        public string DeliveryStatus { get; set; }
         public string DeliveryBy { get; set; }
         public int Quantity { get; set; }
     }
