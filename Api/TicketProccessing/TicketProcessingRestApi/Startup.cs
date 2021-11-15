@@ -12,6 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TicketProcessingRestApi.IRepository.IRepository;
 using TicketProcessingRestApi.Repository;
 
 namespace TicketProcessingRestApi
@@ -34,6 +35,9 @@ namespace TicketProcessingRestApi
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "TicketProcessingRestApi", Version = "v1" });
             });
+
+            services.AddScoped(typeof(IAsyncRepository<>), typeof(BaseRepository<>));
+            services.AddScoped<ITicketRepository, TicketRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -44,6 +48,8 @@ namespace TicketProcessingRestApi
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "TicketProcessingRestApi v1"));
+
+                
             }
 
             app.UseHttpsRedirection();
