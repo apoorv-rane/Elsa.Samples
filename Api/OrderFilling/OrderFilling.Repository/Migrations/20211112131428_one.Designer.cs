@@ -10,8 +10,8 @@ using OrderFilling.Repository;
 namespace OrderFilling.Repository.Migrations
 {
     [DbContext(typeof(DbContextAll))]
-    [Migration("20211109084824_initial")]
-    partial class initial
+    [Migration("20211112131428_one")]
+    partial class one
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -30,17 +30,20 @@ namespace OrderFilling.Repository.Migrations
                     b.Property<string>("DeliveryBy")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("DeliveryStatus")
-                        .HasColumnType("bit");
+                    b.Property<string>("DeliveryStatus")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("OrderDateTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("ProductId")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<Guid>("ProductId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("OrderId");
 
@@ -61,6 +64,9 @@ namespace OrderFilling.Repository.Migrations
 
                     b.Property<int>("ProductPrice")
                         .HasColumnType("int");
+
+                    b.Property<bool>("materialInventory")
+                        .HasColumnType("bit");
 
                     b.HasKey("ProductId");
 
