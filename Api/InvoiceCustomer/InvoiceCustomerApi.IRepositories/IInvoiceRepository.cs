@@ -10,6 +10,7 @@ namespace InvoiceCustomerApi.IRepositories
         Task<IReadOnlyList<Invoice>> GetInvoice();
         Task<Invoice> AddInvoice(Invoice invoice);
         Task UpdateInvoice(Invoice invoice);
-       
+        Task<Invoice> GetInvoiceById(Guid id);
+        Task<bool> checkInvoice(Guid id);
     }
 }

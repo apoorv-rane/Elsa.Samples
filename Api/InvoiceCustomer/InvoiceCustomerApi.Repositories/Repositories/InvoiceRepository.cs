@@ -35,5 +35,24 @@ namespace InvoiceCustomerApi.Repositories.Repositories
             _context.Entry(invoice).State = EntityState.Modified;
             await _context.SaveChangesAsync();
         }
+
+        public async Task<Invoice> GetInvoiceById(Guid id)
+        {
+            var invoice1 = await _context.Invoices.FindAsync(id);
+            return invoice1;
+        }
+
+        public async Task<bool> checkInvoice(Guid id)
+        {
+            var invoice1 = await _context.Invoices.FindAsync(id);
+            if( invoice1.Amount>500)
+            {
+                return true;
+            }
+            else
+            { 
+                return false;
+            }
+        }
     }
 }
