@@ -17,7 +17,9 @@ namespace NewProjectApproval.Repositories.Migrations
                     ProjectTechnology = table.Column<string>(nullable: true),
                     StartDate = table.Column<DateTime>(nullable: false),
                     EndDate = table.Column<DateTime>(nullable: false),
-                    ProjectCost = table.Column<decimal>(nullable: false)
+                    ProjectCost = table.Column<decimal>(nullable: false),
+                    SubmitterName = table.Column<string>(nullable: true),
+                    SubmitterEmail = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
