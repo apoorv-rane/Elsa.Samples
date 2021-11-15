@@ -10,6 +10,8 @@ namespace NewProjectApproval.Entities
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public decimal ProjectCost { get; set; }
-        
+        public string SubmitterName { get; set; }
+        public string SubmitterEmail { get; set; }
+
     }
 }

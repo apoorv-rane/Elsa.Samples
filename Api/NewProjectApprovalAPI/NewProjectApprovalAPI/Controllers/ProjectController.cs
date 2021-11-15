@@ -33,7 +33,7 @@ namespace NewProjectApprovalAPI.Controllers
 
                 StringContent httpContent = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
 
-                HttpResponseMessage response1 = client.PostAsync("https://localhost:5001/project-approval", httpContent).Result;
+                HttpResponseMessage response1 = client.PostAsync("https://localhost:44391/project-approval", httpContent).Result;
             }
 
 
@@ -47,17 +47,17 @@ namespace NewProjectApprovalAPI.Controllers
 
             if (projectTechnology == ".net")
             {
-                managerDetails.DeptManagerName = "Vaibhav Kulkarni";
-                managerDetails.DeptManagerEmail = "vaibhav.kulkarni@neosoftmail.com";
-                managerDetails.ITManagerName = "Neha Haridas";
-                managerDetails.ITManagerEmail = "neha.haridas@neosoftmail.com";
+                managerDetails.DeptManagerName = "Neha Haridas";
+                managerDetails.DeptManagerEmail = "neha.haridas@neosoftmail.com";
+                managerDetails.ITManagerName = "Vaibhav Kulkarni";
+                managerDetails.ITManagerEmail = "vaibhav.kulkarni@neosoftmail.com";
             }
             else if(projectTechnology == "java")
             {
                 managerDetails.DeptManagerName = "Sumit";
                 managerDetails.DeptManagerEmail = "sumit@neosoftmail.com";
-                managerDetails.ITManagerName = "Santosh";
-                managerDetails.ITManagerEmail = "santosh@neosoftmail.com";
+                managerDetails.ITManagerName = "Santosh Shinde";
+                managerDetails.ITManagerEmail = "santosh.shinde@neosoftmail.com";
             }
             else
             {
@@ -66,7 +66,6 @@ namespace NewProjectApprovalAPI.Controllers
                 managerDetails.ITManagerName = "Sagar";
                 managerDetails.ITManagerEmail = "sagar@neosoftmail.com";
             }
-            //return Ok(dtos);
             return Ok(managerDetails);
         }
     }

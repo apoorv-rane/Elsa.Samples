@@ -10,7 +10,7 @@ using NewProjectApproval.Repositories;
 namespace NewProjectApproval.Repositories.Migrations
 {
     [DbContext(typeof(ProjectDbContext))]
-    [Migration("20211108105011_Initial")]
+    [Migration("20211112064649_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -21,7 +21,7 @@ namespace NewProjectApproval.Repositories.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Entities.Project", b =>
+            modelBuilder.Entity("NewProjectApproval.Entities.Project", b =>
                 {
                     b.Property<int>("ProjectId")
                         .ValueGeneratedOnAdd()
@@ -42,6 +42,12 @@ namespace NewProjectApproval.Repositories.Migrations
 
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("SubmitterEmail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SubmitterName")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ProjectId");
 

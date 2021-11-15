@@ -12,7 +12,6 @@ namespace NewProjectApproval.Repositories
             : base(options)
         {
         }
-
         public DbSet<Project> Projects { get; set; }
 
     }
