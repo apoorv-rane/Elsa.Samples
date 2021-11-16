@@ -2,9 +2,11 @@
 using InvoiceCustomerApi.IRepositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace InvoiceCustomerApi.Controllers
@@ -30,6 +32,6 @@ namespace InvoiceCustomerApi.Controllers
             var managerEmail =await _client.GetManagerEmail(id);
             return Ok(managerEmail);
         }
-       
+        
     }
 }
