@@ -2,6 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>b14c454a-9f5b-451b-9d56-162e56b364f1</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>..\..</DockerfileContext>
   </PropertyGroup>
 
   <ItemGroup>
@@ -12,6 +15,7 @@
     <PackageReference Include="Elsa.Designer.Components.Web" Version="2.3.0" />
     <PackageReference Include="Elsa.Persistence.EntityFramework.SqlServer" Version="2.3.0" />
     <PackageReference Include="Elsa.Server.Api" Version="2.3.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.11.1" />
   </ItemGroup>
 
 </Project>

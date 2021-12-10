@@ -11,8 +11,10 @@ using TicketProcessingRestApi.IRepository.IRepository;
 
 namespace TicketProcessingRestApi.Controllers
 {
-    [Route("api/[controller]")]
+
     [ApiController]
+   // [Route("[controller]")]
+    [Route("api/[controller]")]
     public class TicketController : ControllerBase
     {
         private readonly ITicketRepository ticketRepository;
@@ -53,7 +55,7 @@ namespace TicketProcessingRestApi.Controllers
             {
                 string JsonResult = JsonConvert.SerializeObject(response);
                 StringContent stringContent = new StringContent(JsonResult, System.Text.Encoding.UTF8, "application/json");
-                HttpResponseMessage httpResponse = httpClient.PostAsync("https://localhost:5001/PostTicket", stringContent).Result;
+                HttpResponseMessage httpResponse = httpClient.PostAsync("http://nginx:80/PostTicket", stringContent).Result;
             }
             return Ok(response);
         }
@@ -159,7 +161,7 @@ namespace TicketProcessingRestApi.Controllers
 
                 StringContent stringContent = new StringContent(JsonResult, System.Text.Encoding.UTF8, "application/json");
                 httpClient.DefaultRequestHeaders.Add("X-Correlation-Id", ticketEntity.TicketId.ToString());
-                HttpResponseMessage httpResponse = httpClient.PutAsync("https://localhost:5001/PutTicket", stringContent).Result;
+                HttpResponseMessage httpResponse = httpClient.PutAsync("http://nginx:80/PutTicket", stringContent).Result;
             }
             return Ok(ticketEntity);
         }
@@ -177,8 +179,8 @@ namespace TicketProcessingRestApi.Controllers
 
                 StringContent stringContent = new StringContent(JsonResult, System.Text.Encoding.UTF8, "application/json");
                 httpClient.DefaultRequestHeaders.Add("X-Correlation-Id", ticketEntity.TicketId.ToString());
-                HttpResponseMessage httpResponse = httpClient.PutAsync("https://localhost:5001/PutStatus", stringContent).Result;
-            }
+                HttpResponseMessage httpResponse = httpClient.PutAsync("http://nginx:80/PutStatus", stringContent).Result;
+            }//http://elsaserver:80/PutStatus
             return Ok(ticketEntity);
         }
     }

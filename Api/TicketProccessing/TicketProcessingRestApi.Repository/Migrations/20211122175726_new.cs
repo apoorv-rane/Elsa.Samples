@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace TicketProcessingRestApi.Repository.Migrations
 {
-    public partial class Initial : Migration
+    public partial class @new : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -31,7 +31,7 @@ namespace TicketProcessingRestApi.Repository.Migrations
             migrationBuilder.InsertData(
                 table: "Tickets",
                 columns: new[] { "TicketId", "Attachment", "CreateDate", "Discription", "Priority", "TicketType", "assignDate", "assignManager", "assignPerson", "createdBy", "isResolved" },
-                values: new object[] { new Guid("b0788d2f-8003-43c1-92a4-edc76a7c5dde"), "query.pdf", new DateTime(2021, 11, 10, 12, 51, 4, 626, DateTimeKind.Local).AddTicks(37), "new query", "High", "IT", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "neha.haridas@gmail.com", "vinay@xyz.com", "Anshul@gmail.com", false });
+                values: new object[] { new Guid("b0788d2f-8003-43c1-92a4-edc76a7c5dde"), "query.pdf", new DateTime(2021, 11, 22, 23, 27, 25, 439, DateTimeKind.Local).AddTicks(8657), "new query", "High", "IT", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "neha.haridas@gmail.com", "vinay@xyz.com", "Anshul@gmail.com", false });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

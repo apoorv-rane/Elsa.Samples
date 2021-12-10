@@ -69,6 +69,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HireEmployee.IRepositories"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HireEmployee.Repositories", "Api\HireEmployee\HireEmployee.Repositories\HireEmployee.Repositories.csproj", "{CDA9DA1D-18A5-427C-A0DE-53676A17FF9A}"
 EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{A930A0B2-860C-4B05-A77C-5E3F24528793}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -175,6 +177,10 @@ Global
 		{CDA9DA1D-18A5-427C-A0DE-53676A17FF9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CDA9DA1D-18A5-427C-A0DE-53676A17FF9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CDA9DA1D-18A5-427C-A0DE-53676A17FF9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A930A0B2-860C-4B05-A77C-5E3F24528793}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A930A0B2-860C-4B05-A77C-5E3F24528793}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A930A0B2-860C-4B05-A77C-5E3F24528793}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A930A0B2-860C-4B05-A77C-5E3F24528793}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

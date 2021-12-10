@@ -1,0 +1,84 @@
+version: '3.4'
+
+services:
+
+    #depends_on:
+      
+
+      #image: nginx:latest
+        
+     # volumes:
+      #  - ./templates:/etc/nginx/templates
+       # - ./nginx.conf:/etc/nginx/nginx.conf
+      
+      #environment:
+      #  - NGINX_HOST=foobar.com
+      #  - NGINX_PORT=80 
+      #depends_on:
+      #  - elsaserver
+
+  sqlserver:
+     image: "mcr.microsoft.com/mssql/server:2019-latest"
+     environment:
+        - SA_PASSWORD=2@LaiNw)PDvs^t>L!Ybt]6H^%h3U>M
+        - ACCEPT_EULA=Y
+        #  - MSSQL_PID=Express
+     ports:
+        - "1433:1433"
+    # networks:
+    #    - dockerNetwork
+
+  smtp4dev:
+    image: rnwood/smtp4dev:v3
+    restart: always
+    ports:
+      # Change the number before : to the port the web interface should be accessible on
+      - '3000:80'
+      # Change the number before : to the port the SMTP server should be accessible on
+      - '25:25'
+      # Change the number before : to the port the IMAP server should be accessible on
+      - '143:143'
+  ticketprocessingrestapi:
+    image: ${DOCKER_REGISTRY-}ticketprocessingrestapi
+    restart: always
+    build:
+      context: .
+      dockerfile: Api/TicketProccessing/TicketProcessingRestApi/Dockerfile
+    # ports:
+    #   - "8080:80"
+    depends_on: 
+      - sqlserver
+
+  #SeverElsaFlow:  
+  #  image: elsaworkflows/elsa-dashboard-and-server:latest
+  #  container_name: elsa-dashboard
+  #  environment:
+  #    - ELSA__SERVER__BASEURL='http://localhost:5001'
+  #    - ASPNETCORE_ENVIRONMENT= 'Development'
+     #   build:          
+    #    context: .
+     #     dockerfile: Server/Elsa.Server/Dockerfile
+   # ports:
+   #   - "5001:80"
+   # depends_on: 
+    #  - sqlserver
+
+  elsaserver:
+    image:  ${DOCKER_REGISTRY-}elsa.server
+    restart: always
+    build: 
+     context: .
+     dockerfile: Server\Elsa.Server\Dockerfile
+    depends_on: 
+      - sqlserver
+
+  nginx:
+    build: 
+      context: ./nginx
+      dockerfile: Dockerfile
+    ports:
+       - "2020:80"
+       - "8080:81"
+    links:
+       - elsaserver
+

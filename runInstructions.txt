@@ -1,0 +1,19 @@
+run container
+1)rightclick on composefile open in terminal /open powershell in sln folder 
+2)run command:=> docker-compose -f .\docker-compose.yml -f .\docker-compose.override.yml down
+3)docker-compose -f .\docker-compose.yml -f .\docker-compose.override.yml up -d
+
+run api through nginx=> http://localhost:8080/swagger/index.html
+
+run ElsaSeverthrough nginx=> http://localhost:2020/workflow-definitions
+
+run email server=> http://localhost:5000/
+
+
+
+1) post ticket from swagger postapi,
+2) check elsa instance is created or not
+3) update assign person
+4) go to mail review ticket by clicking on link
+5) finally update the resolved status as true
+6) check mails and instance status in elsa as finished or not

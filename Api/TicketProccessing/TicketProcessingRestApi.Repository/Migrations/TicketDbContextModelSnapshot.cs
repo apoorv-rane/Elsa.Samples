@@ -64,7 +64,7 @@ namespace TicketProcessingRestApi.Repository.Migrations
                         {
                             TicketId = new Guid("b0788d2f-8003-43c1-92a4-edc76a7c5dde"),
                             Attachment = "query.pdf",
-                            CreateDate = new DateTime(2021, 11, 10, 12, 51, 4, 626, DateTimeKind.Local).AddTicks(37),
+                            CreateDate = new DateTime(2021, 11, 22, 23, 27, 25, 439, DateTimeKind.Local).AddTicks(8657),
                             Discription = "new query",
                             Priority = "High",
                             TicketType = "IT",

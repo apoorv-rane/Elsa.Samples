@@ -26,8 +26,8 @@ namespace Elsa.Server.Pages
 
                 StringContent httpContent = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
 
-                HttpResponseMessage response = client.GetAsync("https://localhost:44331/api/Ticket/GetTicket?id=" + ticketId).Result;
-
+                HttpResponseMessage response = client.GetAsync("http://nginx:81/api/Ticket/GetTicket?id=" + ticketId).Result;
+//http://ticketprocessingrestapi:80/api/Ticket/GetTicket?id=
                 var claim = await response.Content.ReadAsStringAsync();
                 ticketRequest = JsonConvert.DeserializeObject<TicketRequest>(claim);
             }
